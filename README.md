@@ -29,5 +29,5 @@ discord:
 * [ ] !money - display money
 
 ## Utils
-[Discord](https://discord.com/), [Discord.js](https://discord.js.org/)
+[Discord](https://discord.com/), [Discord.js](https://discord.js.org/), [Lowdb](https://github.com/typicode/lowdb)
 
