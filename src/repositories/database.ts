@@ -9,10 +9,10 @@ export default class Database {
         Database.adapter = new FileSync('db.json');
         Database.db = low(Database.adapter);
 
-        Database.db.defaults({ 
-            players: [],
-            channel: '',
-            role: ''
-        }).write();
+        // Database.db.defaults({
+        //     players: [],
+        //     channel: '',
+        //     role: ''
+        // }).write();
     }
 }
