@@ -1,11 +1,13 @@
 import Logger from './utils/logger';
 import DiscordBot from "./discord/bot";
+import ConfigLoader from "./utils/configloader";
+import Database from './repositories/database';
+import { IConfig } from "./interfaces/config";
 // Managers
 import CommandManager from "./managers/command";
 // Commands
 import HelpCommand from "./commands/help";
-import ConfigLoader from "./utils/configloader";
-import { IConfig } from "./interfaces/config";
+import MineCommand from './commands/mine';
 
 export class Game {
     static config: IConfig;
@@ -17,6 +19,7 @@ export class Game {
 
     static loadCommand() {
         CommandManager.register(new HelpCommand());
+        CommandManager.register(new MineCommand());
     }
 
     static launch() {
@@ -28,6 +31,7 @@ export class Game {
         Game.loadCommand();
 
         // Init
+        Database.init();
         DiscordBot.init(Game.config.discord.token);
     }
 }

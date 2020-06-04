@@ -15,7 +15,8 @@
       "types": [
         "node",
         "colors",
-        "js-yaml"
+        "js-yaml",
+        "lowdb"
       ]
     }
 }

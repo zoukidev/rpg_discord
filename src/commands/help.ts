@@ -14,6 +14,7 @@ export default class HelpCommand extends CommandModel {
         textHelp += '!ressources - ressources list\n';
         textHelp += '!money - display money';
         textHelp += '```';
+        
         msg.reply(textHelp);
         msg.delete();
     }
