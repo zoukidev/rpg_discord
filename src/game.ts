@@ -8,6 +8,7 @@ import CommandManager from "./managers/command";
 // Commands
 import HelpCommand from "./commands/help";
 import MineCommand from './commands/mine';
+import PlayerRepository from './repositories/player';
 
 export class Game {
     static config: IConfig;
