@@ -20,6 +20,12 @@ npm run dev
 ```
 discord:
   token: <bot_token>
+default:
+  ressources:
+    wood: 0
+    stone: 0
+    gold_nugget: 0
+    money: 0
 ```
 
 ## Commands:
