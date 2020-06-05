@@ -1,8 +1,17 @@
 export interface IPlayer {
     id: string;
-    wood: number;
-    stone: number;
-    gold_nugget: number;
     money: number;
     is_mining: boolean;
+    actions: IPlayerActions;
+    objects: IPlayerGameObject[];
+}
+
+export interface IPlayerActions {
+    is_mining: boolean;
+}
+
+
+export interface IPlayerGameObject {
+    id: string;
+    quantity: number;
 }

@@ -1,4 +1,4 @@
-# Discord RPG
+# RPGDiscord
 
 ## Installation
 ```
@@ -20,12 +20,6 @@ npm run dev
 ```
 discord:
   token: <bot_token>
-default:
-  ressources:
-    wood: 0
-    stone: 0
-    gold_nugget: 0
-    money: 0
 ```
 
 ## Commands:
@@ -36,5 +30,7 @@ default:
 * [ ] !mine - harvest resources
 
 ## Utils
-[Discord](https://discord.com/), [Discord.js](https://discord.js.org/), [Lowdb](https://github.com/typicode/lowdb)
-
+* [Discord](https://discord.com/)
+* [Discord.js](https://discord.js.org/)
+* [Lowdb](https://github.com/typicode/lowdb)
+* [JustMyLuck](https://www.npmjs.com/package/just-my-luck)

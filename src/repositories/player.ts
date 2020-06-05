@@ -1,16 +1,19 @@
 import Database from "./database";
 import {IPlayer} from "../interfaces/player";
+import GameObject from "../object";
 
 export default class PlayerRepository {
-    static create(id: string, wood: number, stone: number, gold_nugget: number, money: number) {
+    static create(id: string) {
         Database.db.get('players')
             .push({
                 id: id,
-                wood: wood,
-                stone: stone,
-                gold_nugget: gold_nugget,
-                money: money,
-                is_mining: false
+                money: 0,
+                actions: {
+                    is_mining: false
+                },
+                objects: [
+                    ...GameObject.initPlayerGameObject()
+                ]
             })
             .write();
     }

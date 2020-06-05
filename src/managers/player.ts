@@ -1,6 +1,5 @@
 import {User} from "discord.js";
 import PlayerRepository from "../repositories/player";
-import {Game} from "../game";
 import {IPlayer} from "../interfaces/player";
 
 export default class PlayerManager {
@@ -19,7 +18,7 @@ export default class PlayerManager {
     }
 
     static createPlayer(user: User) {
-        PlayerRepository.create(user.id, Game.config.default.ressources.wood, Game.config.default.ressources.stone, Game.config.default.ressources.gold_nugget, Game.config.default.money);
+        PlayerRepository.create(user.id);
     }
 
     static getPlayer(user: User): IPlayer {

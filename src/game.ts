@@ -17,15 +17,6 @@ export class Game {
     static config: IConfig;
     static logger: Logger;
 
-    static printInformations() {
-        Game.logger.info('==== Starting stuff ====');
-        Game.logger.info(`Money: ${Game.config.default.money}`);
-        Game.logger.info(`Wood: ${Game.config.default.ressources.wood}`);
-        Game.logger.info(`Stone: ${Game.config.default.ressources.stone}`);
-        Game.logger.info(`Gold Nuggets: ${Game.config.default.ressources.gold_nugget}`);
-        Game.logger.info('========================');
-    }
-
     static loadConfig() {
         Game.config = ConfigLoader.load('config.yml');
         Game.logger.info('config.yml loaded');
@@ -51,9 +42,13 @@ export class Game {
 
         // Load
         Game.loadCommand();
+    }
+}
 
-        // printInformations
-        Game.printInformations();
+export class Definitions {
+    static moneyName = 'Crowns';
+    static icons: any = {
+        money: '👑'
     }
 }
 

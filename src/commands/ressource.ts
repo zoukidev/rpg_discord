@@ -1,7 +1,9 @@
 import {Message} from "discord.js";
 import CommandModel from "./model";
 import PlayerManager from "../managers/player";
-import {IPlayer} from "../interfaces/player";
+import {IPlayer, IPlayerGameObject} from "../interfaces/player";
+import GameObject from "../object";
+import {IGameObject} from "../interfaces/gameobject";
 
 export default class RessourceCommand extends CommandModel {
     constructor() {
@@ -12,11 +14,14 @@ export default class RessourceCommand extends CommandModel {
         PlayerManager.checkIfPlayerExist(msg.author, true);
 
         let player: IPlayer = PlayerManager.getPlayer(msg.author);
-        let textHelp = '';
-        textHelp += '**wood** '+ player.wood +'\n';
-        textHelp += '**stone** '+ player.stone +'\n';
-        textHelp += '**gold nugget** '+ player.gold_nugget +'\n';
+        let textHelp = '\n';
 
-        msg.channel.send(textHelp);
+        player.objects.map((o: IPlayerGameObject) => {
+            let gameobject: IGameObject = GameObject.findById(o.id)
+
+            textHelp += `**${gameobject.name||'Undefined'}**: ${o.quantity} ${gameobject.icon}\n`;
+        });
+
+        msg.reply(textHelp);
     }
 }
