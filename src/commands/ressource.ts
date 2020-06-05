@@ -11,7 +11,6 @@ export default class RessourceCommand extends CommandModel {
         let player_data = PlayerManager.checkIfPlayerExist(msg.author);
 
         let textHelp = '';
-        textHelp += '**money** ' + player_data.money + '\n';
         textHelp += '**wood** '+ player_data.wood +'\n';
         textHelp += '**stone** '+ player_data.stone +'\n';
         textHelp += '**gold nugget** '+ player_data.gold_nugget +'\n';

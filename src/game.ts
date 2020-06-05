@@ -11,6 +11,8 @@ import MineCommand from './commands/mine';
 import SetChannelCommand from "./commands/setchannel";
 import TestCommand from "./commands/test";
 import RessourceCommand from "./commands/ressource";
+import MineManager from "./managers/mine";
+import MoneyCommand from "./commands/money";
 
 export class Game {
     static config: IConfig;
@@ -36,6 +38,7 @@ export class Game {
         CommandManager.register(new MineCommand());
         CommandManager.register(new TestCommand());
         CommandManager.register(new RessourceCommand());
+        CommandManager.register(new MoneyCommand());
     }
 
     static launch() {
@@ -46,6 +49,7 @@ export class Game {
         Database.init();
         DiscordBot.init();
         CommandManager.init();
+        MineManager.init();
 
         // Load
         Game.loadCommand();

@@ -31,8 +31,8 @@ default:
 ## Commands:
 * [x] !help - commands list
 * [x] !ressources - ressources list
+* [x] !money - display money
 * [ ] !mine - harvest resources
-* [ ] !money - display money
 
 ## Utils
 [Discord](https://discord.com/), [Discord.js](https://discord.js.org/), [Lowdb](https://github.com/typicode/lowdb)
