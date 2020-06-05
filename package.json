@@ -17,7 +17,7 @@
     "bot"
   ],
   "author": "zoukidev",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "dependencies": {
     "@types/colors": "^1.2.1",
     "@types/node": "^12.12.5",
