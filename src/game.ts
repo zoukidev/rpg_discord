@@ -10,6 +10,7 @@ import HelpCommand from "./commands/help";
 import MineCommand from './commands/mine';
 import SetChannelCommand from "./commands/setchannel";
 import TestCommand from "./commands/test";
+import RessourceCommand from "./commands/ressource";
 
 export class Game {
     static config: IConfig;
@@ -34,6 +35,7 @@ export class Game {
         CommandManager.register(new HelpCommand());
         CommandManager.register(new MineCommand());
         CommandManager.register(new TestCommand());
+        CommandManager.register(new RessourceCommand());
     }
 
     static launch() {

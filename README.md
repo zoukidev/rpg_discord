@@ -29,9 +29,9 @@ default:
 ```
 
 ## Commands:
-* [ ] !help - commands list
+* [x] !help - commands list
+* [x] !ressources - ressources list
 * [ ] !mine - harvest resources
-* [ ] !ressources - ressources list
 * [ ] !money - display money
 
 ## Utils

@@ -8,10 +8,10 @@ export default class TestCommand extends CommandModel {
     }
 
     exec(msg: Message) {
-        if (PlayerManager.checkIfPlayerExist(msg.author)) {
-            msg.reply(`user saved`);
-        }
+        let player_data = PlayerManager.checkIfPlayerExist(msg.author);
+        console.log('result', player_data);
 
-        msg.reply(`${msg.author.username} ${msg.author.id}(${typeof(msg.author.id)})`);
+        msg.reply(`user getted`);
+        // msg.reply(`${msg.author.username} ${msg.author.id}(${typeof(msg.author.id)})`);
     }
 }
