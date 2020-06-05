@@ -11,6 +11,10 @@ export default class CommandManager {
         CommandManager.logger = new Logger('CommandManager');
     }
 
+    /**
+     *
+     * @param command
+     */
     static register(command: CommandModel) {
         CommandManager.commands.push(command);
     }
@@ -25,13 +29,21 @@ export default class CommandManager {
         }
     }
 
+    /**
+     *
+     * @param msg
+     * @return boolean
+     */
     static checkChannel(msg: Message): boolean {
         let defaultChannel = GameRepository.get('channel')
 
         return msg.channel.id == defaultChannel;
     }
 
-    static printCommandList() {
+    /**
+     * @return string command list
+     */
+    static printCommandList(): string {
         let commands: any = '';
 
         (CommandManager.commands).map((command: CommandModel) => {

@@ -32,10 +32,18 @@ export default class GameObject {
         }
     ];
 
+    /**
+     *
+     * @param id
+     * @return IGameObject
+     */
     static findById(id: string): IGameObject {
         return GameObject.objects.filter((g: IGameObject) => g.name == id)[0];
     }
 
+    /**
+     * @return GameObject[]
+     */
     static initPlayerGameObject(): GameObject[] {
         return GameObject.objects.map((g: IGameObject) => ({
             id: g.name,

@@ -3,6 +3,10 @@ import {IPlayer} from "../interfaces/player";
 import GameObject from "../object";
 
 export default class PlayerRepository {
+    /**
+     *
+     * @param id
+     */
     static create(id: string) {
         Database.db.get('players')
             .push({
@@ -18,12 +22,22 @@ export default class PlayerRepository {
             .write();
     }
 
+    /**
+     *
+     * @param id
+     * @return IPlayer
+     */
     static get(id: string): IPlayer {
         return Database.db.get('players')
             .find({ id: id })
             .value();
     }
 
+    /**
+     *
+     * @param id
+     * @param data
+     */
     static update(id: string, data: IPlayer) {
         Database.db.get('players')
             .find({ id: id })
