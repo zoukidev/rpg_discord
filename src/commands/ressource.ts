@@ -4,7 +4,7 @@ import PlayerManager from "../managers/player";
 
 export default class RessourceCommand extends CommandModel {
     constructor() {
-        super('ressources');
+        super('ressources', 'Shows all resources in your inventory');
     }
 
     exec(msg: Message) {

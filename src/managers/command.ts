@@ -12,4 +12,15 @@ export default class CommandManager {
     static register(command: CommandModel) {
         CommandManager.commands.push(command);
     }
+
+    static printCommandList() {
+        let commands: any = '';
+
+        (CommandManager.commands).map((command: CommandModel) => {
+            commands += `**!${command.name}** ${command.description}\n`;
+        });
+
+        return commands;
+    }
+
 }

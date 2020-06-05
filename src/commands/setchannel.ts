@@ -4,7 +4,7 @@ import GameRepository from "../repositories/game";
 
 export default class SetChannelCommand extends CommandModel {
     constructor() {
-        super('setchannel');
+        super('setchannel', 'Set the living room to use the bot');
     }
 
     exec(msg: Message) {

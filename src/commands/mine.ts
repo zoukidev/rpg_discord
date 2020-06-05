@@ -3,7 +3,7 @@ import * as Discord from "discord.js";
 
 export default class MineCommand extends CommandModel {
     constructor() {
-        super('mine');
+        super('mine', 'Harvest resources');
     }
 
     exec(msg: Discord.Message) {

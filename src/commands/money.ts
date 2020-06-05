@@ -4,7 +4,7 @@ import PlayerManager from "../managers/player";
 
 export default class MoneyCommand extends CommandModel {
     constructor() {
-        super('money');
+        super('money', 'Show money you own');
     }
 
     exec(msg: Message) {

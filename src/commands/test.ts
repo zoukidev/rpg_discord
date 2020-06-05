@@ -4,7 +4,7 @@ import PlayerManager from "../managers/player";
 
 export default class TestCommand extends CommandModel {
     constructor() {
-        super('test');
+        super('test', 'Test command');
     }
 
     exec(msg: Message) {

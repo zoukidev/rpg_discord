@@ -1,18 +1,13 @@
 import CommandModel from "./model";
 import { Message } from "discord.js";
+import CommandManager from "../managers/command";
 
 export default class HelpCommand extends CommandModel {
     constructor() {
-        super('help');
+        super('help', 'Display all command');
     }
 
     exec(msg: Message) {
-        let textHelp = '';
-            textHelp += '**!help** Commands list\n';
-            textHelp += '**!mine** Harvest resources\n';
-            textHelp += '**!ressources** Ressources list\n';
-            textHelp += '**!money** Display money';
-
-        msg.channel.send(textHelp);
+        msg.channel.send(CommandManager.printCommandList());
     }
 }
