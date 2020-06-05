@@ -21,7 +21,6 @@ export default class CommandManager {
 
             if (available_command) {
                 available_command.exec(msg);
-                msg.delete();
             }
         }
     }

@@ -4,4 +4,5 @@ export interface IPlayer {
     stone: number;
     gold_nugget: number;
     money: number;
+    is_mining: boolean;
 }

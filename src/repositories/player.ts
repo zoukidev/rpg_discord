@@ -9,7 +9,8 @@ export default class PlayerRepository {
                 wood: wood,
                 stone: stone,
                 gold_nugget: gold_nugget,
-                money: money
+                money: money,
+                is_mining: false
             })
             .write();
     }
@@ -18,5 +19,12 @@ export default class PlayerRepository {
         return Database.db.get('players')
             .find({ id: id })
             .value();
+    }
+
+    static update(id: string, data: IPlayer) {
+        Database.db.get('players')
+            .find({ id: id })
+            .assign(data)
+            .write();
     }
 }
