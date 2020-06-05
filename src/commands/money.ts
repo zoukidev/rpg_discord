@@ -1,6 +1,7 @@
-import { Message } from "discord.js";
+import {Message} from "discord.js";
 import CommandModel from "./model";
 import PlayerManager from "../managers/player";
+import {IPlayer} from "../interfaces/player";
 
 export default class MoneyCommand extends CommandModel {
     constructor() {
@@ -8,9 +9,11 @@ export default class MoneyCommand extends CommandModel {
     }
 
     exec(msg: Message) {
-        let player_data = PlayerManager.checkIfPlayerExist(msg.author);
-        let textHelp = '**money** ' + player_data.money;
+        PlayerManager.checkIfPlayerExist(msg.author, true);
 
-        msg.channel.send(textHelp);
+        let player: IPlayer = PlayerManager.getPlayer(msg.author);
+        let text = '**money** ' + player.money;
+
+        msg.channel.send(text);
     }
 }

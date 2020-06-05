@@ -1,23 +1,22 @@
 import Database from "./database";
-import { Game } from '../game';
+import {IPlayer} from "../interfaces/player";
 
 export default class PlayerRepository {
-    static create(id: string) {
+    static create(id: string, wood: number, stone: number, gold_nugget: number, money: number) {
         Database.db.get('players')
             .push({
                 id: id,
-                wood: Game.config.default.ressources.wood,
-                stone: Game.config.default.ressources.stone,
-                gold_nugget: Game.config.default.ressources.gold_nugget,
-                money: Game.config.default.ressources.money
+                wood: wood,
+                stone: stone,
+                gold_nugget: gold_nugget,
+                money: money
             })
-            .write()
+            .write();
     }
 
-    static get(id: string) {
+    static get(id: string): IPlayer {
         return Database.db.get('players')
-            .filter({id: id})
-            .take(1)
-            .value()
+            .find({ id: id })
+            .value();
     }
 }

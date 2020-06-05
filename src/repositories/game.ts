@@ -5,4 +5,9 @@ export default class GameRepository {
         Database.db.set(key, value)
             .write()
     }
+
+    static get(key: string): any {
+        return Database.db.get(key)
+            .value()
+    }
 }

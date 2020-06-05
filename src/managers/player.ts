@@ -1,12 +1,28 @@
 import {User} from "discord.js";
 import PlayerRepository from "../repositories/player";
+import {Game} from "../game";
+import {IPlayer} from "../interfaces/player";
 
 export default class PlayerManager {
-    static checkIfPlayerExist(user: User): any {
-        if (PlayerRepository.get(user.id).length == 0) {
-            PlayerRepository.create(user.id);
-        }
+    static checkIfPlayerExist(user: User, createPlayerIfDontExist?: boolean): boolean {
+        let playerFinded = PlayerRepository.get(user.id);
 
-        return PlayerRepository.get(user.id)[0];
+        if (playerFinded && playerFinded.id == user.id) {
+            return true;
+        } else {
+            if (createPlayerIfDontExist) {
+                PlayerManager.createPlayer(user)
+            }
+
+            return false;
+        }
+    }
+
+    static createPlayer(user: User) {
+        PlayerRepository.create(user.id, Game.config.default.ressources.wood, Game.config.default.ressources.stone, Game.config.default.ressources.gold_nugget, Game.config.default.money);
+    }
+
+    static getPlayer(user: User): IPlayer {
+       return PlayerRepository.get(user.id);
     }
 }
