@@ -29,6 +29,7 @@ default:
 ```
 
 ## Commands:
+* [x] !setchannel - set channel for using bot (need Administrator role)
 * [x] !help - commands list
 * [x] !ressources - ressources list
 * [x] !money - display money
