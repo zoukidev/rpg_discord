@@ -5,30 +5,27 @@ export default class GameObject {
         {
             name: 'dynamite',
             icon: '🧨',
-        },
-        {
-            name: 'bomb',
-            icon: '💣',
+            dropRate: 0.02
         },
         {
             name: 'pills',
             icon: '💊',
+            dropRate: 0.1
         },
         {
             name: 'drug',
             icon: '💉',
-        },
-        {
-            name: 'syringe',
-            icon: '💉',
+            dropRate: 0.1
         },
         {
             name: 'weapons',
             icon: '🔪',
+            dropRate: 0.05
         },
         {
             name: 'tools',
             icon: '🛠',
+            dropRate: 1
         }
     ];
 
