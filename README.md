@@ -34,3 +34,4 @@ discord:
 * [Discord.js](https://discord.js.org/)
 * [Lowdb](https://github.com/typicode/lowdb)
 * [JustMyLuck](https://www.npmjs.com/package/just-my-luck)
+* [TypeDoc](http://typedoc.org/)
